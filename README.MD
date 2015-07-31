@@ -4,7 +4,7 @@
 
 Instead of 
 ```js
-$('#my-number').val((int)nr);
+$('#my-number').text((int)nr);
 ```
 
 use
