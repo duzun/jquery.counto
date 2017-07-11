@@ -17,6 +17,7 @@
     "LICENSE",
     "README.MD"
   ],
+  "reveal": true,
   "keywords": [
     "jquery",
     "plugin",
