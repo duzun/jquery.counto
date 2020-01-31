@@ -21,7 +21,7 @@
  * @author Dumitru Uzun (DUzun.Me)
  * @version 1.0.0
  */
-function xNumber(val, prec, term, fmt) {
+export default function xNumber(val, prec, term, fmt) {
     fmt || (fmt = {})
     if(this instanceof xNumber) {
     // If in constructor, set up the instance
@@ -49,7 +49,7 @@ function xNumber(val, prec, term, fmt) {
     }
 }
 
-!function $xNumber(_cons,_prot) {
+(function $xNumber(_cons,_prot) {
     function safe_prec(prec) {
         if(prec === true || prec == null)  prec = false; else
         if(prec !== false) prec = parseInt(prec) || 0;
@@ -188,4 +188,4 @@ function xNumber(val, prec, term, fmt) {
         }
         return val
     }
-}(xNumber);
+}(xNumber));

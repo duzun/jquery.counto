@@ -1,10 +1,16 @@
 {
   "name": "jquery.counto",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A jQuery plugin to display numeric values with a nice animation.",
-  "main": "src/counto.js",
+  "module": "src/counto.js",
+  "main": "dist/counto.js",
+  "main_umd": "dist/counto.umd.js",
+  "unpkg": "dist/counto.min.js",
+  "unpkg_umd": "dist/counto.umd.min.js",
   "scripts": {
-    "verup": "node ./node_modules/verup",
+    "build": "rollup -c rollup.config.js",
+    "xnum": "rollup src/xNumber.js -o dist/xNumber.js -f iife -n xNumber",
+    "verup": "verup",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -37,11 +43,18 @@
   },
   "homepage": "https://github.com/duzun/jquery.counto#readme",
   "devDependencies": {
-    "verup": "^1.3.x"
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "rollup": "^1.27.8",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-terser": "^5.1.2",
+    "verup": "^1.7"
   },
-  "verup": {
-    "files": [
-      "src/counto.js"
-    ]
+  "extra": {
+    "verup": {
+      "files": [
+        "src/counto.js"
+      ]
+    }
   }
 }

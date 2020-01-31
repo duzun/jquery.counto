@@ -13,23 +13,10 @@
  *  @git https://github.com/duzun/jquery.counto
  *
  *  @author Dumitru Uzun (DUzun.Me)
- *  @version 1.0.0
+ *  @version 1.1.0
  */
-;(function (win) {
-    'use strict';
-    // ---------------------------------------------------------------------------
-    var $        = win.jQuery || win.Zepto
-    ,   undefined
-    ,   UNDEFINED = undefined + ''
-    ,   FUNCTION = 'function'
-    ;
-    (typeof define !== FUNCTION || !define.amd
-        ? typeof module == UNDEFINED || !module.exports
-            ? function (deps, factory) { factory($); } // Browser
-            : function (deps, factory) { module.exports = factory($||require('jquery')); } // CommonJs
-        : define // AMD
-    )
-    /*define*/(/*name, */[$?null:'jquery'], function factory($) {
+
+ export default function init($) {
         // ---------------------------------------------------------------------------
         /// Nice count to nr (by DUzun)
         function counto(nr,dl,done) {
@@ -40,7 +27,7 @@
                 rwm = parseFloat,
                 rwc,
                 fx = String(nr).split('.');
-            if(typeof xNumber == FUNCTION) {
+            if(typeof xNumber == 'function') {
                 rwm = xNumber;
                 rwc = xNumber;
             }
@@ -72,14 +59,17 @@
                             $this[mh](val);
                         }
                         if(!data._cto) {
-                            if(typeof done === FUNCTION) done.call(e, nr, val);
+                            if(typeof done === 'function') done.call(e, nr, val);
                         }
                     } ;
                 sv();
             });
         }
 
-        return $.fn.counto = counto;
-    });
+    return $.fn.counto = counto;
 }
-(this));
+
+if ( typeof window !== 'undefined' ) {
+    const $ = window.jQuery || window.Zepto;
+    if ( $ ) init($);
+}
