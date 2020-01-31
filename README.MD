@@ -1,23 +1,39 @@
-# A jQuery plugin to change numeric values with a nice animation
+# A jQuery plugin to change numeric values with a counting animation
+
+## Install
+
+First, include it after the `jQuery` script:
+
+```html
+<script src="https://unpkg.com/jquery.counto"></script>
+```
+
+or import/require it and init on a `jQuery` instance:
+
+```js
+import init_counto from 'jquery.counto';
+
+init_counto(jQuery);
+```
 
 ## Usage
 
 Instead of
 
 ```js
-$('#my-number').text((int)nr);
+$('#my-number').text(number);
 ```
 
 use
 
 ```js
-$(`#my-number`).counto((int)nr, timeout, ondone);
+$(`#my-number`).counto(number, timeout, ondone);
 ```
 
 where
 
 ```js
-ondone.call(this, nr, old_val);
+ondone.call(this, number, old_number);
 ```
 
 ### xNumber

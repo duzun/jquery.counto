@@ -1,7 +1,7 @@
 {
   "name": "jquery.counto",
   "version": "1.1.0",
-  "description": "A jQuery plugin to display numeric values with a nice animation.",
+  "description": "A jQuery plugin to change numeric values with a counting animation",
   "module": "src/counto.js",
   "main": "dist/counto.js",
   "main_umd": "dist/counto.umd.js",
@@ -29,6 +29,8 @@
     "plugin",
     "number",
     "count",
+    "text",
+    "value",
     "countup"
   ],
   "author": {
